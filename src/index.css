@@ -69,11 +69,11 @@ h2 {
     padding-bottom: 50px;
 }
 h3{
-  color: black ;
+  color: #e67e22;
+
 }
 .main-heading {
-    margin-top: 0;
-    margin-bottom: 20px;
+    margin: auto;
     color: #fff;
     font-size: 240%;
     word-spacing: 4px;
@@ -223,5 +223,26 @@ input[type=checkbox] {
 
 }
 
+.container-detail{
+  padding: 50px 50px 50px ;
+  display: flex;
+  width: 90%;
+  height:500px;
+  margin: 0 auto; 
+  /* border: 5px solid #003049; */
+  flex-direction: column;
+  justify-content: space-evenly
 
+}
+
+/* .details{
+  width:200px;
+  height:200px;
+  background-color:red
+} */
+#div2{
+  width:200px;
+  height:200px;
+  background-color:green
+}
 *:focus {outline: none;}
