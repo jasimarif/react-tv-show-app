@@ -13,10 +13,10 @@ const Details = () => {
             .then((res) => {
                 //console.log("res",res.data.image, res.data.image.medium)
                 const { name, summary } = res.data
-                const {medium} = res.data.image.medium ? res.data.image : "" 
+                const {medium} = res.data.image ? res.data.image.medium : "https://images.unsplash.com/photo-1461151304267-38535e780c79?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8dHYlMjBzaG93c3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
                 let resObj = {
                     name, 
-                    summary: summary.replace(/&/g,'&amp;').replace(/<p/g,'').replace(/>/g,'').replace(/<\/p/g,''),
+                    summary: summary ? summary.replace(/&/g,'&amp;').replace(/<p/g,'').replace(/>/g,'').replace(/<\/p/g,'') : "Summary Not Available",
                     imageUrl:medium
                 }
                 // resObj.image = res.data.image.medium 
@@ -29,13 +29,13 @@ const Details = () => {
     console.log(show)
     return (
         <div className="Details">
-            <h2> Show Details - {name} </h2>
+            {/* <h2> Show Details - {name} </h2> */}
             <Link to={`/`}><p> Back </p> </Link>
 
             {show && show.map((show, index) => {
                 console.log(show)
                 return (
-                    <div className="book" key={index}>
+                    <div className="show-details" key={index}>
                         <h3> {show.name} </h3>
                         <div className="details">
                         <img alt="" src={show.imageUrl} />
