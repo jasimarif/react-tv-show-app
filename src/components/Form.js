@@ -66,21 +66,21 @@ function Form() {
                                     <div className="col span-1-of-3">
                                         <div className="plan-box">
                                             <div>
-                                                <h3>{show.name}</h3>
+                                                
                                                 <Link to={`/details/${show.name}`}><img alt="" src={show.imageUrl} /> </Link>
-                                                <p className="plan-price-meal"> Description  </p>
+                                                <p className="plan-price-meal"> {show.name}  </p>
                                             </div>
                                             <div>
                                                 <ul>
-                                                    <li><i class="ion-ios-checkmark-empty icon-small"></i><a href={show.url}>Show Url</a></li>
-                                                    <li><i class="ion-ios-checkmark-empty icon-small"></i>{show.genres}</li>
-                                                    <li><i class="ion-ios-checkmark-empty icon-small"></i>{show.language}</li>
+                                                    <li><i class="ion-android-star icon-small"></i><a href={show.url}>Show Url</a></li>
+                                                    <li><i class="ion-android-star icon-small"></i>{show.genres}</li>
+                                                    <li><i class="ion-android-star icon-small"></i>{show.language}</li>
+                                                    <li><i class="ion-eye icon-small"></i><a href={`/details/${show.name}`} class="btn btn-full">Details</a></li>
+
                                                 </ul>
                                             </div>
                                             <div>
-                                                <div>
-                                                    <a href={`/details/${show.name}`} class="btn-small">View Details</a>
-                                                </div>
+                                              
                                             </div>
                                         </div>
                                     </div>
