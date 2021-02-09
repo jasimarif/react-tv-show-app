@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 function Form() {
     const [shows, setBooks] = useState(null);
     const searchQuery = React.useRef(null);
-// Fetch data from API and destructure it.
+    // Fetch data from API and destructure it.
     const fetchData = async (e) => {
         e.preventDefault();
         console.log(searchQuery.current.value)
@@ -41,9 +41,9 @@ function Form() {
             <div className="row">
                 <form className="contact-form hero-text-box" onSubmit={fetchData}>
                     <div className="row">
-                        <h2>Search Away!! </h2>
+                        <h2>Search TV show!! </h2>
                         <div className="search-area">
-                            <input type="text" placeholder="Search for tv show" ref={searchQuery} />
+                            <input type="text" id="inputField" placeholder="Search for tv show" ref={searchQuery} />
 
                             <button className="mktoButtonRow" >
                                 Search
@@ -60,22 +60,22 @@ function Form() {
                             shows.map((show, index) => {
                                 return (
                                     <div className="col span-1-of-3">
-                                        <div className="plan-box">
+                                        <div className="plan-box" key={index}>
                                             <div>
                                                 <Link to={`/details/${show.name}`}><img alt="" src={show.imageUrl} /> </Link>
                                                 <p className="plan-price-meal"> {show.name}  </p>
                                             </div>
                                             <div>
                                                 <ul>
-                                                    <li><i class="ion-android-star icon-small"></i><a href={show.url}>{show.url}</a></li>
-                                                    <li><i class="ion-android-star icon-small"></i>{show.genres}</li>
-                                                    <li><i class="ion-android-star icon-small"></i>{show.language}</li>
-                                                    <li><i class="ion-eye icon-small"></i><a href={`/details/${show.name}`} class="btn btn-full">Details</a></li>
+                                                    <li><i className="ion-android-star icon-small"></i><a href={show.url}>{show.url}</a></li>
+                                                    <li><i className="ion-android-star icon-small"></i>{show.genres}</li>
+                                                    <li><i className="ion-android-star icon-small"></i>{show.language}</li>
+                                                    <li><i className="ion-eye icon-small"></i><a href={`/details/${show.name}`} className="btn btn-full">Details</a></li>
 
                                                 </ul>
                                             </div>
                                             <div>
-                                              
+
                                             </div>
                                         </div>
                                     </div>
@@ -102,7 +102,7 @@ export default Form
 {/* <form id="searchForm" onSubmit={fetchData}>
 <input type="text" placeholder="Search for artist" ref={searchQuery} />
 <div>
-    <button className="fetch-button btn btn-full" >
+    <button classNameName="fetch-button btn btn-full" >
         Fetch Data
 </button>
     <br />
