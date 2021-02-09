@@ -1,16 +1,6 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
+/* ----------------------------------------------- */
+/* BASIC SETUP */
+/* ----------------------------------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -60,7 +50,7 @@ header {
   transform: translate(-50%, -50%);
 }
 
-
+/* ----- HEADINGS ----- */
 h1,
 h2 {
     font-weight: 300;
@@ -80,6 +70,7 @@ h3{
     letter-spacing: 1px;
 }
 
+/* ----- BUTTONS ----- */
 
 .btn:hover,
 .btn:active{
@@ -104,7 +95,9 @@ input[type=submit] {
   margin-right: 15px;
   font-size: 15px;
 }
-
+/* ----------------------------------------------- */
+/* FORM */
+/* ----------------------------------------------- */
 .contact-form {
   width: 60%;
   margin: 0 auto;
@@ -133,6 +126,7 @@ input[type=checkbox] {
   top: 20%;
   margin: 0 auto;
 }
+/* ----- ICONS ----- */
 
 .icon-small {
   display: inline-block;
@@ -147,6 +141,9 @@ input[type=checkbox] {
   vertical-align: middle;
   margin-top: -5px;
 }
+/* ----------------------------------------------- */
+/* SHOWS SECTION */
+/* ----------------------------------------------- */
 .section-plans {
   background-color: #f4f4f4;
 }
@@ -201,10 +198,9 @@ input[type=checkbox] {
   padding: 5px 0;
 }
 
-/* .show-details{
-
-} */
-
+/* ----------------------------------------------- */
+/* SEARCH AREA */
+/* ----------------------------------------------- */
 .search-area{
   width: auto;
   display:inline-block;
@@ -222,27 +218,18 @@ input[type=checkbox] {
   position: relative; 
 
 }
-
+/* ----------------------------------------------- */
+/* Details styling */
+/* ----------------------------------------------- */
 .container-detail{
   padding: 50px 50px 50px ;
   display: flex;
   width: 90%;
   height:500px;
   margin: 0 auto; 
-  /* border: 5px solid #003049; */
   flex-direction: column;
   justify-content: space-evenly
 
 }
 
-/* .details{
-  width:200px;
-  height:200px;
-  background-color:red
-} */
-#div2{
-  width:200px;
-  height:200px;
-  background-color:green
-}
 *:focus {outline: none;}

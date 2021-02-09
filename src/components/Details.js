@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
-
+// functional component to show details of individual component
 const Details = () => {
     const [show, setShow] = useState(null);
     const { name } = useParams();
@@ -11,7 +11,6 @@ const Details = () => {
     useEffect(() => {
         axios.get(`http://api.tvmaze.com/singlesearch/shows`, config)
             .then((res) => {
-                //console.log("res",res.data.image, res.data.image.medium)
                 const { name, summary } = res.data
                 const { medium } = res.data.image ? res.data.image : ""
                 let resObj = {
@@ -19,28 +18,28 @@ const Details = () => {
                     summary: summary ? summary.replace(/&/g, '&amp;').replace(/<p/g, '').replace(/>/g, '').replace(/<\/p/g, '') : "Summary Not Available",
                     imageUrl: medium ? medium : "https://images.unsplash.com/photo-1461151304267-38535e780c79?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8dHYlMjBzaG93c3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
                 }
-                // resObj.image = res.data.image.medium 
                 responseData.push(resObj)
-
                 setShow(responseData)
-
             })
     }, [])
     console.log(show)
+    
+    {/* Display data of individual tv show */ }
+
     return (
-        
+
         <section>
             <Link to={`/`}><p> Back </p> </Link>
             { show && show.map((show, index) => {
                 return (
                     <section className="container-detail" key={index}>
                         <div><h3> {show.name} </h3> </div>
-                        
+
                         <div className="details">
                             <img alt="" src={show.imageUrl} />
-                             
+
                         </div>
-                        <div>    
+                        <div>
                             <p> {show.summary} </p>
                         </div>
                     </section>

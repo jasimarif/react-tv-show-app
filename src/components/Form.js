@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
-
+// functional component to display search box and each search results
 function Form() {
     const [shows, setBooks] = useState(null);
     const searchQuery = React.useRef(null);
-
+// Fetch data from API and destructure it.
     const fetchData = async (e) => {
         e.preventDefault();
         console.log(searchQuery.current.value)
@@ -53,9 +52,6 @@ function Form() {
                     </div>
 
                 </form>
-
-                {/* Fetch data from API */}
-
 
                 {/* Display data from API */}
                 <section className="section-plans">
